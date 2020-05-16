@@ -15,7 +15,7 @@ Snelm has a very easy and unified interface for all the major web frameworks. Yo
 import { Application } from "https://deno.land/x/oak/mod.ts";
 
 // Importing Snelm
-import { Snelm } from "../mod.ts";
+import { Snelm } from "https://raw.githubusercontent.com/denjucks/snelm/master/mod.ts";
 
 const app = new Application();
 
@@ -216,7 +216,7 @@ Snelm Middleware example for Oak:
 
 ```javascript
 import { Application } from "https://deno.land/x/oak/mod.ts";
-import { Snelm } from "../mod.ts";
+import { Snelm } from "https://raw.githubusercontent.com/denjucks/snelm/master/mod.ts";
 
 const app = new Application();
 
@@ -244,7 +244,7 @@ Snelm Middleware example for ABC:
 
 ```javascript
 import { Application, MiddlewareFunc } from "https://deno.land/x/abc/mod.ts";
-import { Snelm } from "../mod.ts";
+import { Snelm } from "https://raw.githubusercontent.com/denjucks/snelm/master/mod.ts";
 
 const app = new Application();
 
@@ -278,7 +278,7 @@ Snelm Middleware example for Alosaur:
 import { Controller, Get, Area, App, ServerRequest, ServerResponse } from 'https://deno.land/x/alosaur/src/mod.ts';
 import { Middleware } from 'https://deno.land/x/alosaur/src/decorator/Middleware.ts';
 import { MiddlewareTarget } from 'https://deno.land/x/alosaur/src/models/middleware-target.ts';
-import { Snelm } from "../mod.ts";
+import { Snelm } from "https://raw.githubusercontent.com/denjucks/snelm/master/mod.ts";
 
 // Configuring Snelm for Alosaur
 const snelm = new Snelm("alosaur");
@@ -331,7 +331,7 @@ As Pogo does not support middleware currently, you'll have to call snelm within 
 
 ```javascript
 import pogo from 'https://deno.land/x/pogo/main.ts';
-import { Snelm } from "../mod.ts";
+import { Snelm } from "https://raw.githubusercontent.com/denjucks/snelm/master/mod.ts";
 
 const server = pogo.server({ port : 55555 });
 
