@@ -6,6 +6,7 @@ Snelm is a fully customizable security middleware for the major Deno web framewo
  * **[ABC](https://deno.land/x/abc)** framework
  * **[Alosaur](https://deno.land/x/alosaur)** framework
  * **[Pogo](https://deno.land/x/pogo)** framework
+ * **[Aqua](https://deno.land/x/aqua)** framework
 
 ## Basic Usage
 
@@ -349,6 +350,32 @@ server.router.get('/', (request, handler) => {
 
 server.start();
 ```
+
+### Aqua
+
+```javascript
+import Aqua from "https://deno.land/x/aqua/aqua.ts";
+import { Snelm } from "https://deno.land/x/snelm/mod.ts";
+
+const app = new Aqua(8000);
+
+// Configuring Snelm for Aqua
+const snelm = new Snelm("aqua");
+await snelm.init();
+
+// Snelm Middleware for Aqua
+app.register((request, response) => {
+    response.headers = new Headers();
+    response = snelm.snelm(request, response);
+
+    return response;
+});
+
+app.get("/", (request, response) => {
+    return "Aqua";
+});
+```
+
 
 # License
 
