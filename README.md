@@ -7,6 +7,7 @@ Snelm is a fully customizable security middleware for the major Deno web framewo
  * **[Alosaur](https://deno.land/x/alosaur)** framework
  * **[Pogo](https://deno.land/x/pogo)** framework
  * **[Aqua](https://deno.land/x/aqua)** framework
+ * **[Attain](https://deno.land/x/attain)** framework
 
 ## Basic Usage
 
@@ -376,6 +377,32 @@ app.get("/", (request, response) => {
 });
 ```
 
+### Attain
+
+```typescript
+import { App, Request, Response } from "https://deno.land/x/attain/mod.ts";
+import { Snelm } from "https://deno.land/x/snelm/mod.ts";
+
+const app = new App();
+
+// Configuring Snelm for Attain
+const snelm = new Snelm("attain");
+await snelm.init();
+
+// Snelm Middleware for Attain
+const snelmMiddleware = (req: Request, res: Response) => {
+  res = snelm.snelm(req, res);
+};
+
+// Adding in the middleware
+app.use(snelmMiddleware, (req, res) => {
+  res.status(200).send({status: "Good"});
+});
+
+app.listen({ port: 3500 });
+
+console.log("http://localhost:3500");
+```
 
 # License
 
