@@ -1,3 +1,4 @@
+/// <reference types="../index.d.ts" />
 /*!
  * Bowser - a browser detector
  * https://github.com/lancedikson/bowser
