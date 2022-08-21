@@ -8,6 +8,7 @@ Snelm is a fully customizable security middleware for the major Deno web framewo
  * **[Pogo](https://deno.land/x/pogo)** framework
  * **[Aqua](https://deno.land/x/aqua)** framework
  * **[Attain](https://deno.land/x/attain)** framework
+ * **[Fresh](https://deno.land/x/fresh)** framework
 
 ## Basic Usage
 
@@ -402,6 +403,23 @@ app.use(snelmMiddleware, (req, res) => {
 app.listen({ port: 3500 });
 
 console.log("http://localhost:3500");
+```
+
+### Fresh
+
+```typescript
+import { MiddlewareHandlerContext } from "https://deno.land/x/fresh/server.ts";
+import { Snelm } from "https://deno.land/x/snelm/mod.ts";
+
+// Configuring Snelm for the Fresh framework in the _middleware.ts file
+const snelm = new Snelm("fresh");
+await snelm.init();
+
+// Snelm Middleware for Fresh
+export async function handler(req: Request, ctx: MiddlewareHandlerContext) {
+  const res: Response = snelm.snelm(req, await ctx.next());
+  return res;
+}
 ```
 
 # License
